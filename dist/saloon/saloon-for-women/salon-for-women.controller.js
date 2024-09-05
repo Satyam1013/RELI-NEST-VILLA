@@ -13,22 +13,22 @@ exports.SaloonForWomenController = void 0;
 const common_1 = require("@nestjs/common");
 const salon_for_women_service_1 = require("./salon-for-women.service");
 let SaloonForWomenController = class SaloonForWomenController {
-    constructor(SaloonForWomenService) {
-        this.SaloonForWomenService = SaloonForWomenService;
+    constructor(saloonForWomenService) {
+        this.saloonForWomenService = saloonForWomenService;
     }
-    getHello() {
-        return this.SaloonForWomenService.getSaloonDataForWomen();
+    getSaloonDataForWomen() {
+        return this.saloonForWomenService.getSaloonDataForWomen();
     }
 };
 exports.SaloonForWomenController = SaloonForWomenController;
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)('saloon'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], SaloonForWomenController.prototype, "getHello", null);
+    __metadata("design:returntype", void 0)
+], SaloonForWomenController.prototype, "getSaloonDataForWomen", null);
 exports.SaloonForWomenController = SaloonForWomenController = __decorate([
-    (0, common_1.Controller)(),
+    (0, common_1.Controller)('women'),
     __metadata("design:paramtypes", [salon_for_women_service_1.SaloonForWomenService])
 ], SaloonForWomenController);
 //# sourceMappingURL=salon-for-women.controller.js.map

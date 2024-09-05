@@ -1,24 +1,25 @@
 import { Injectable } from "@nestjs/common";
-import { InjectModel } from "@nestjs/mongoose";
-import { SaloonForWoMenSchema } from "./saloon-for-women.schema";
+import { InjectModel } from "@m8a/nestjs-typegoose";
 import { ReturnModelType } from "@typegoose/typegoose";
-import saloonDataForWomen from "./saloon-for-women.json";
+import { SaloonForWoMenSchema } from "./saloon-for-women.schema";
+import saloonForWomen from "./saloon-for-women.json";
 
 @Injectable()
 export class SaloonForWomenService {
   constructor(
-    @InjectModel("SaloonForWoMen")
+    @InjectModel(SaloonForWoMenSchema)
     private readonly saloonForWoMenModel: ReturnModelType<
       typeof SaloonForWoMenSchema
     >
   ) {}
+
   async getSaloonDataForWomen() {
-    const womenData = saloonDataForWomen.map(
-      ({ image, name, description }) => ({ image, name, description })
-    );
-    console.log('womenData: ', womenData)
-    const data = await this.saloonForWoMenModel.create({
-      name: "SaloonForWoMen",
-    });
+    const data = saloonForWomen.map(({ name, image, description }) => ({
+      name,
+      image,
+      description,
+    }));
+    const womenData = await this.saloonForWoMenModel.create();
+    return womenData;
   }
 }

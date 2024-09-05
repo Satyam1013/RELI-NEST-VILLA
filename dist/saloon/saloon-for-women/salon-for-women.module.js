@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SaloonForWomenModule = void 0;
 const common_1 = require("@nestjs/common");
+const nestjs_typegoose_1 = require("@m8a/nestjs-typegoose");
 const salon_for_women_controller_1 = require("./salon-for-women.controller");
 const salon_for_women_service_1 = require("./salon-for-women.service");
-const mongoose_1 = require("@nestjs/mongoose");
 const saloon_for_women_schema_1 = require("./saloon-for-women.schema");
 let SaloonForWomenModule = class SaloonForWomenModule {
 };
@@ -18,8 +18,11 @@ exports.SaloonForWomenModule = SaloonForWomenModule;
 exports.SaloonForWomenModule = SaloonForWomenModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forFeature([
-                { name: "SaloonForWoMen", schema: saloon_for_women_schema_1.SaloonForWoMenSchema },
+            nestjs_typegoose_1.TypegooseModule.forFeature([
+                {
+                    typegooseClass: saloon_for_women_schema_1.SaloonForWoMenSchema,
+                    schemaOptions: { collection: "saloonForWomen" },
+                },
             ]),
         ],
         controllers: [salon_for_women_controller_1.SaloonForWomenController],

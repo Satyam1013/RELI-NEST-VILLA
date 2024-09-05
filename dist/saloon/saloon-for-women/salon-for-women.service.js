@@ -17,24 +17,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SaloonForWomenService = void 0;
 const common_1 = require("@nestjs/common");
-const mongoose_1 = require("@nestjs/mongoose");
+const nestjs_typegoose_1 = require("@m8a/nestjs-typegoose");
+const saloon_for_women_schema_1 = require("./saloon-for-women.schema");
 const saloon_for_women_json_1 = __importDefault(require("./saloon-for-women.json"));
 let SaloonForWomenService = class SaloonForWomenService {
     constructor(saloonForWoMenModel) {
         this.saloonForWoMenModel = saloonForWoMenModel;
     }
     async getSaloonDataForWomen() {
-        const womenData = saloon_for_women_json_1.default.map(({ image, name, description }) => ({ image, name, description }));
-        console.log('womenData: ', womenData);
-        const data = await this.saloonForWoMenModel.create({
-            name: "SaloonForWoMen",
-        });
+        const data = saloon_for_women_json_1.default.map(({ name, image, description }) => ({
+            name,
+            image,
+            description,
+        }));
+        const womenData = await this.saloonForWoMenModel.create();
+        return womenData;
     }
 };
 exports.SaloonForWomenService = SaloonForWomenService;
 exports.SaloonForWomenService = SaloonForWomenService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, mongoose_1.InjectModel)("SaloonForWoMen")),
+    __param(0, (0, nestjs_typegoose_1.InjectModel)(saloon_for_women_schema_1.SaloonForWoMenSchema)),
     __metadata("design:paramtypes", [Object])
 ], SaloonForWomenService);
 //# sourceMappingURL=salon-for-women.service.js.map

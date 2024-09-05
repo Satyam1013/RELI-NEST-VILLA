@@ -1,12 +1,12 @@
 import { Controller, Get } from "@nestjs/common";
 import { SaloonForWomenService } from "./salon-for-women.service";
 
-@Controller()
+@Controller('women')
 export class SaloonForWomenController {
-  constructor(private readonly SaloonForWomenService: SaloonForWomenService) {}
+  constructor(private readonly saloonForWomenService: SaloonForWomenService) {}
 
-  @Get()
-  getHello(): string {
-    return this.SaloonForWomenService.getSaloonDataForWomen();
+  @Get('saloon')
+  getSaloonDataForWomen() {
+    return this.saloonForWomenService.getSaloonDataForWomen();
   }
 }
