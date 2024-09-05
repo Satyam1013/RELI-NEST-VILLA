@@ -7,6 +7,6 @@ export class SaloonForWomenController {
 
   @Get()
   getHello(): string {
-    return this.SaloonForWomenService.getHello();
+    return this.SaloonForWomenService.getSaloonDataForWomen();
   }
 }

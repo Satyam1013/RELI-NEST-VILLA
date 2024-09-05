@@ -17,7 +17,7 @@ let SaloonForWomenController = class SaloonForWomenController {
         this.SaloonForWomenService = SaloonForWomenService;
     }
     getHello() {
-        return this.SaloonForWomenService.getHello();
+        return this.SaloonForWomenService.getSaloonDataForWomen();
     }
 };
 exports.SaloonForWomenController = SaloonForWomenController;

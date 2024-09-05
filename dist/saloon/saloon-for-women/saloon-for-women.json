@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Emily's Fashion Hub",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Emily's+Fashion+Hub",
+        "description": "A trendy boutique specializing in modern, chic styles for women of all ages."
+    },
+    {
+        "name": "Glamour Beauty Studio",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Glamour+Beauty+Studio",
+        "description": "Offering a wide range of beauty services, from haircuts to makeup, in a luxurious setting."
+    },
+    {
+        "name": "Serenity Hair Spa",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Serenity+Hair+Spa",
+        "description": "A peaceful retreat for hair care, specializing in scalp treatments and hair restoration."
+    },
+    {
+        "name": "Radiance Nails and Spa",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Radiance+Nails+and+Spa",
+        "description": "A premier destination for nail art, manicures, pedicures, and spa treatments."
+    },
+    {
+        "name": "Luxe Hair Lounge",
+        "image": "https://dummyimage.com/600x400/000/fff&text=Luxe+Hair+Lounge",
+        "description": "A high-end salon that provides premium hair styling and coloring services."
+    }
+]

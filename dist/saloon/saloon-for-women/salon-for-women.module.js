@@ -10,12 +10,18 @@ exports.SaloonForWomenModule = void 0;
 const common_1 = require("@nestjs/common");
 const salon_for_women_controller_1 = require("./salon-for-women.controller");
 const salon_for_women_service_1 = require("./salon-for-women.service");
+const mongoose_1 = require("@nestjs/mongoose");
+const saloon_for_women_schema_1 = require("./saloon-for-women.schema");
 let SaloonForWomenModule = class SaloonForWomenModule {
 };
 exports.SaloonForWomenModule = SaloonForWomenModule;
 exports.SaloonForWomenModule = SaloonForWomenModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [
+            mongoose_1.MongooseModule.forFeature([
+                { name: "SaloonForWoMen", schema: saloon_for_women_schema_1.SaloonForWoMenSchema },
+            ]),
+        ],
         controllers: [salon_for_women_controller_1.SaloonForWomenController],
         providers: [salon_for_women_service_1.SaloonForWomenService],
     })
