@@ -10,7 +10,7 @@ exports.SaloonForMenService = void 0;
 const common_1 = require("@nestjs/common");
 let SaloonForMenService = class SaloonForMenService {
     getHello() {
-        return 'Hello World!';
+        return 'Hello MOTO!';
     }
 };
 exports.SaloonForMenService = SaloonForMenService;

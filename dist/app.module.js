@@ -12,6 +12,8 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const salon_for_women_module_1 = require("./saloon/saloon-for-women/salon-for-women.module");
 const nestjs_typegoose_1 = require("@m8a/nestjs-typegoose");
+const orders_module_1 = require("./orders/orders.module");
+const salon_for_men_module_1 = require("./saloon/saloon-for-men/salon-for-men.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -19,7 +21,9 @@ exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             nestjs_typegoose_1.TypegooseModule.forRoot("mongodb+srv://satyambanwale786:satyam786@villa.njlqb.mongodb.net/villa"),
+            salon_for_men_module_1.SaloonForMenModule,
             salon_for_women_module_1.SaloonForWomenModule,
+            orders_module_1.OrdersModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

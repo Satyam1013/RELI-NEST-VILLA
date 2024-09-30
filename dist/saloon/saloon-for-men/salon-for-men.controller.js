@@ -22,13 +22,13 @@ let SaloonForMenController = class SaloonForMenController {
 };
 exports.SaloonForMenController = SaloonForMenController;
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)('saloon'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], SaloonForMenController.prototype, "getHello", null);
 exports.SaloonForMenController = SaloonForMenController = __decorate([
-    (0, common_1.Controller)(),
+    (0, common_1.Controller)('men'),
     __metadata("design:paramtypes", [salon_for_men_service_1.SaloonForMenService])
 ], SaloonForMenController);
 //# sourceMappingURL=salon-for-men.controller.js.map
