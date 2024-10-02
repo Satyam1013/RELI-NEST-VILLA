@@ -19,7 +19,7 @@ export class SaloonForWomenService {
       image,
       description,
     }));
-    const womenData = await this.saloonForWoMenModel.create();
+    const womenData = await this.saloonForWoMenModel.create({ data });
     return womenData;
   }
 }
